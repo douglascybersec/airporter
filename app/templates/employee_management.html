@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Employee Management</h2>
+<div class="tabs">
+    <button class="tablinks active" onclick="openTab(event, 'AllEmployees')">All Employees</button>
+    <button class="tablinks" onclick="openTab(event, 'AirportEmployees')">Airport Employees</button>
+    <button class="tablinks" onclick="openTab(event, 'AirplaneEmployees')">Airplane Employees</button>
+</div>
+
+<div id="AllEmployees" class="tabcontent" style="display: block;">
+    <h3>All Employees</h3>
+    <table id="allEmployeesTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Designation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Employee data will be populated here -->
+        </tbody>
+    </table>
+</div>
+
+<div id="AirportEmployees" class="tabcontent">
+    <h3>Airport Employees</h3>
+    <table id="airportEmployeesTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Designation</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Airport employee data will be populated here -->
+        </tbody>
+    </table>
+</div>
+
+<div id="AirplaneEmployees" class="tabcontent">
+    <h3>Airplane Employees</h3>
+    <table id="airplaneEmployeesTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Designation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Airplane employee data will be populated here -->
+        </tbody>
+    </table>
+</div>
+
+<button id="addEmployeeBtn" class="btn-primary">Add New Employee</button>
+
+<!-- Add Employee Modal -->
+<div id="addEmployeeModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add New Employee</h2>
+        <form id="addEmployeeForm">
+            <div class="form-group">
+                <label for="employeeName">Name:</label>
+                <input type="text" id="employeeName" name="employeeName" required>
+            </div>
+            <div class="form-group">
+                <label for="employeeSalary">Salary:</label>
+                <input type="number" id="employeeSalary" name="employeeSalary" required>
+            </div>
+            <div class="form-group">
+                <label for="employeeDesignation">Designation:</label>
+                <input type="text" id="employeeDesignation" name="employeeDesignation" required>
+            </div>
+            <div class="form-group">
+                <label for="employeeType">Employee Type:</label>
+                <select id="employeeType" name="employeeType" required>
+                    <option value="airport">Airport Employee</option>
+                    <option value="airplane">Airplane Employee</option>
+                </select>
+            </div>
+            <div class="form-group" id="departmentGroup" style="display: none;">
+                <label for="employeeDepartment">Department:</label>
+                <input type="text" id="employeeDepartment" name="employeeDepartment">
+            </div>
+            <button type="submit" class="btn-primary">Add Employee</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

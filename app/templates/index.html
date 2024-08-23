@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1 style="color: rgb(255, 255, 255);">Welcome to AirPorter</h1>
+        <p style="color: white; font-size: 1.2em;">(Elevate Your Travel Experience)</p>
+        <a href="{{ url_for('ticket_counter') }}" class="cta-button">Book a Flight</a>
+    </div>
+</section>
+
+<section class="features">
+    <h2>Our Features</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <i class="icon-ticket"></i>
+            <h3>Easy Booking</h3>
+            <p>Book your flights with just a few clicks</p>
+        </div>
+        <div class="feature-item">
+            <i class="icon-plane"></i>
+            <h3>Flight Management</h3>
+            <p>Efficiently manage all flight operations</p>
+        </div>
+        <div class="feature-item">
+            <i class="icon-users"></i>
+            <h3>Employee Management</h3>
+            <p>Streamline your workforce management</p>
+        </div>
+        <div class="feature-item">
+            <i class="icon-luggage"></i>
+            <h3>Luggage Tracking</h3>
+            <p>Keep track of passenger luggage effortlessly</p>
+        </div>
+    </div>
+</section>
+
+<section class="flight-info">
+    <h2>Latest Flight Information</h2>
+    <div id="flightInfoTable">
+        <!-- flight information will be dynamically populated here -->
+    </div>
+</section>
+
+<section class="news-updates">
+    <h2>Latest News</h2>
+    <div class="news-grid">
+        <div class="news-item">
+            <h3>New Direct Flight to Paris</h3>
+            <p>We're excited to announce a new direct flight to Paris starting next month!</p>
+        </div>
+        <div class="news-item">
+            <h3>Airport Expansion Project</h3>
+            <p>Our airport is undergoing a major expansion to serve you better.</p>
+        </div>
+    </div>
+</section>
+
+<section class="partners">
+    <h2>Our Partners</h2>
+    <div class="partner-logos">
+        <a href="https://https://github.com/douglascybersec" target="_blank">
+            <img src="{{ url_for('static', filename='assets/images/partner0-logo.png') }}" alt="Partner 0">
+        </a>
+        <a href="https://www.youtube.com/@douglascybersec" target="_blank">
+            <img src="{{ url_for('static', filename='assets/images/partner1-logo.png') }}" alt="Partner 1">
+        </a>
+        <a href="https://https://x.com/douglascybersec" target="_blank">
+            <img src="{{ url_for('static', filename='assets/images/partner2-logo.png') }}" alt="Partner 2">
+        </a>
+    </div>
+</section>
+
+
+<section class="newsletter">
+    <h2>Stay Updated</h2>
+    <p>Subscribe to our newsletter for the latest flight information and offers.</p>
+    <form id="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+    <p id="newsletter-message"></p>
+</section>
+{% endblock %}

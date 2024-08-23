@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Passenger Details</h2>
+<div class="passenger-container">
+    <div class="passenger-form">
+        <h3>Add/Edit Passenger</h3>
+        <form id="passengerForm">
+            <input type="hidden" id="passengerId" name="passengerId">
+            <div class="form-group">
+                <label for="passengerName">Name:</label>
+                <input type="text" id="passengerName" name="passengerName" required>
+            </div>
+            <div class="form-group">
+                <label for="passengerAge">Age:</label>
+                <input type="number" id="passengerAge" name="passengerAge" required>
+            </div>
+            <div class="form-group">
+                <label for="ticketId">Ticket Details:</label>
+                <input type="text" id="ticketId" name="ticketId">
+            </div>
+            <div class="form-group">
+                <label for="luggageId">Luggage Details:</label>
+                <input type="text" id="luggageId" name="luggageId">
+            </div>
+            <button type="submit" id="submitPassenger">Add/Update Passenger</button>
+        </form>
+    </div>
+    <div class="passenger-list">
+        <h3>Passenger List</h3>
+        <table id="passengerTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Ticket Details</th>
+                    <th>Luggage Details</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Passenger rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

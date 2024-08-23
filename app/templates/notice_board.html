@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Notice Board</h2>
+
+<div id="noticeBoard">
+    <div class="notice-section">
+        <h3>Current Flights</h3>
+        <table id="currentFlightsTable">
+            <thead>
+                <tr>
+                    <th>Flight</th>
+                    <th>Departure</th>
+                    <th>Arrival</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Current flights will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+    <div class="notice-section">
+        <h3>Upcoming Flights</h3>
+        <table id="upcomingFlightsTable">
+            <thead>
+                <tr>
+                    <th>Flight</th>
+                    <th>Departure</th>
+                    <th>Arrival</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Upcoming flights will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const evtSource = new EventSource("/notice_board_stream");
+    evtSource.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+        updateNoticeBoardTables(data);
+    };
+
+    function updateNoticeBoardTables(data) {
+        updateTable('currentFlightsTable', data.current_flights);
+        updateTable('upcomingFlightsTable', data.upcoming_flights);
+    }
+
+    function updateTable(tableId, flights) {
+        const tbody = document.getElementById(tableId).getElementsByTagName('tbody')[0];
+        tbody.innerHTML = '';
+        flights.forEach(flight => {
+            const row = tbody.insertRow();
+            row.innerHTML = `
+                <td>${flight.FlightName}</td>
+                <td>${flight.DepartureTime}</td>
+                <td>${flight.ArrivalTime}</td>
+                <td>${flight.Source}</td>
+                <td>${flight.Destination}</td>
+                <td>${flight.Status}</td>
+            `;
+        });
+    }
+
+    // Initial load of notice board data
+    fetch('/get_notice_board')
+        .then(response => response.json())
+        .then(data => updateNoticeBoardTables(data));
+</script>
+{% endblock %}

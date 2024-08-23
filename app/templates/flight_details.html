@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Flight Details</h2>
+<div class="flight-details-container">
+    <div class="flight-form">
+        <h3>Add/Edit Flight</h3>
+        <form id="flightForm">
+            <input type="hidden" id="FlightId" name="FlightId">
+            <div class="form-group">
+                <label for="FlightName">Flight Name:</label>
+                <input type="text" id="FlightName" name="FlightName" required>
+            </div>
+            <div class="form-group">
+                <label for="Capacity">Capacity:</label>
+                <input type="number" id="Capacity" name="Capacity" required>
+            </div>
+            <div class="form-group">
+                <label for="StartingTime">Starting Time:</label>
+                <input type="datetime-local" id="StartingTime" name="StartingTime" required>
+            </div>
+            <div class="form-group">
+                <label for="ReachingTime">Reaching Time:</label>
+                <input type="datetime-local" id="ReachingTime" name="ReachingTime" required>
+            </div>
+            <div class="form-group">
+                <label for="Source">Source:</label>
+                <input type="text" id="Source" name="Source" required>
+            </div>
+            <div class="form-group">
+                <label for="Destination">Destination:</label>
+                <input type="text" id="Destination" name="Destination" required>
+            </div>
+            <div class="form-group">
+                <label for="Price">Price:</label>
+                <input type="number" id="Price" name="Price" step="0.01" required>
+            </div>
+            <button type="submit" class="btn-primary">Add/Update Flight</button>
+        </form>
+    </div>
+    <div class="flight-list">
+        <h3>Flight List</h3>
+        <table id="flightTable">
+            <thead>
+                <tr>
+                    <th>Flight Name</th>
+                    <th>Capacity</th>
+                    <th>Starting Time</th>
+                    <th>Reaching Time</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Flight data will be populated here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

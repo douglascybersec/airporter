@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h2>Dashboard</h2>
+    <p>Welcome to your dashboard. Here you can manage all aspects of the airport.</p>
+    <div class="dashboard-menu">
+        {% if role == 'admin' %}
+            <a href="{{ url_for('airport_management') }}" class="dashboard-item">Airport Management</a>
+            <a href="{{ url_for('ticket_counter') }}" class="dashboard-item">Ticket Counter</a>
+            <a href="{{ url_for('flight_details') }}" class="dashboard-item">Flight Details</a>
+            <a href="{{ url_for('employee_management') }}" class="dashboard-item">Employee Management</a>
+            <a href="{{ url_for('runway_details') }}" class="dashboard-item">Runway Details</a>
+            <a href="{{ url_for('passenger_details') }}" class="dashboard-item">Passenger Details</a>
+            <a href="{{ url_for('notice_board') }}" class="dashboard-item">Notice Board</a>
+            <a href="{{ url_for('luggage_details') }}" class="dashboard-item">Luggage Details</a>
+        {% elif role == 'user' %}
+            <a href="{{ url_for('ticket_counter') }}" class="dashboard-item">Ticket Counter</a>
+            <a href="{{ url_for('flight_details') }}" class="dashboard-item">Flight Details</a>
+            <a href="{{ url_for('passenger_details') }}" class="dashboard-item">Passenger Details</a>
+            <a href="{{ url_for('luggage_details') }}" class="dashboard-item">Luggage Details</a>
+        {% else %}
+            <p>Unauthorized access. Please contact admin.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

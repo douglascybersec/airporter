@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Ticket Counter</h2>
+
+<div class="ticket-counter-container">
+    <form id="ticketForm">
+        <div class="form-group">
+            <label for="flightSelect">Select Flight:</label>
+            <select id="flightSelect" required>
+                <option value="">Choose a flight</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="passengerName">Passenger Name:</label>
+            <input type="text" id="passengerName" required>
+        </div>
+        <div class="form-group">
+            <label for="passengerAge">Passenger Age:</label>
+            <input type="number" id="passengerAge" required>
+        </div>
+        <div class="form-group">
+            <label for="seatNumber">Seat Number:</label>
+            <input type="text" id="seatNumber" required>
+            <small>Enter seat number (e.g., A1, B2)</small>
+        </div>
+        <div class="form-group">
+            <label for="luggageCount">Number of Luggage:</label>
+            <input type="number" id="luggageCount" min="0" value="0">
+        </div>
+        <button type="submit" class="btn-primary">Book Ticket</button>
+    </form>
+</div>
+
+<div id="ticketDetails" style="display: none;">
+    <h3>Ticket Details</h3>
+    <p>Ticket ID: <span id="detailTicketId"></span></p>
+    <p>Passenger Name: <span id="detailPassengerName"></span></p>
+    <p>Flight: <span id="detailFlightName"></span></p>
+    <p>Seat: <span id="detailSeat"></span></p>
+    <p>Departure: <span id="detailDeparture"></span></p>
+    <p>Arrival: <span id="detailArrival"></span></p>
+    <p>Price: $<span id="detailPrice"></span></p>
+    <p>Luggage Count: <span id="detailLuggage"></span></p>
+</div>
+{% endblock %}

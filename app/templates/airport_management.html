@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="management-container">
+    <h2>Airport Management</h2>
+    <div class="management-form">
+        <form method="post" action="{{ url_for('airport_management') }}">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.AirportName.label }} {{ form.AirportName(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.CityName.label }} {{ form.CityName(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.Area.label }} {{ form.Area(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+
+    <h3>Existing Airports</h3>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Airport Name</th>
+                    <th>City Name</th>
+                    <th>Area</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for airport in airports %}
+                <tr>
+                    <td>{{ airport.AirportName }}</td>
+                    <td>{{ airport.CityName }}</td>
+                    <td>{{ airport.Area }}</td>
+                    <td>
+                        <form method="post" action="{{ url_for('delete_airport', airport_id=airport.id) }}">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

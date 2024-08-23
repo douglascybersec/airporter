@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Runway Details</h2>
+<div class="runway-container">
+    <div class="runway-form">
+        <h3>Add/Edit Runway</h3>
+        <form id="runwayForm">
+            <input type="hidden" id="runwayId" name="runwayId">
+            <div class="form-group">
+                <label for="runwayNumber">Runway Number:</label>
+                <input type="number" id="runwayNumber" name="runwayNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="flightName">Flight Name:</label>
+                <input type="text" id="flightName" name="flightName">
+            </div>
+            <div class="form-group">
+                <label for="occupiedStatus">Occupied Status:</label>
+                <select id="occupiedStatus" name="occupiedStatus">
+                    <option value="true">Occupied</option>
+                    <option value="false">Not Occupied</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-primary">Save Runway</button>
+        </form>
+    </div>
+    <div class="runway-list">
+        <h3>Runway List</h3>
+        <table id="runwayTable">
+            <thead>
+                <tr>
+                    <th>Runway Number</th>
+                    <th>Flight Name</th>
+                    <th>Occupied Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Runway rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,880 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #007bff;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul a.nav-item {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav ul a.nav-item:hover {
+    color: #007bff;
+}
+
+
+
+/* Main content styles */
+main {
+    padding: 20px;
+    min-height: calc(100vh - 140px);
+    box-sizing: border-box;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+/* Tab styles */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* Form and table styles */
+h2 {
+    color: #2c3e50;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007bff;
+}
+
+/* Ticket Counter Styles */
+.ticket-counter-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.ticket-details {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.ticket-details h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.ticket-details p {
+    margin: 10px 0;
+}
+
+/* Flight Details Styles */
+.flight-details-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.flight-form, .flight-list {
+    width: 48%;
+}
+
+.flight-form form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.flight-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.flight-list th, .flight-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.flight-list th {
+    background-color: #f2f2f2;
+}
+
+.flight-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.flight-list tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Employee Management Styles */
+.tabs {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tabs button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tabs button:hover {
+    background-color: #ddd;
+}
+
+.tabs button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#addEmployeeBtn {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+/* Runway Styles */
+.runway-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.runway-form, .runway-list {
+    width: 48%;
+}
+
+.runway-form form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.runway-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.runway-list th, .runway-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.runway-list th {
+    background-color: #f2f2f2;
+}
+
+.runway-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.runway-list tr:hover {
+    background-color: #f5f5f5;
+}
+
+.passenger-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.passenger-form, .passenger-list {
+    width: 48%;
+}
+
+.passenger-form form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.passenger-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.passenger-list th, .passenger-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.passenger-list th {
+    background-color: #f2f2f2;
+}
+
+.passenger-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.passenger-list tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+/* Notice Board Styles */
+#noticeBoard {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.notice-section {
+    width: 48%;
+}
+
+.notice-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.notice-section th, .notice-section td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.notice-section th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.notice-section tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.notice-section tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Status colors */
+.status-scheduled { color: blue; }
+.status-checkin { color: green; }
+.status-boarding { color: orange; }
+.status-departed { color: red; }
+
+
+
+/* luggage styles */
+.luggage-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.luggage-form, .luggage-list {
+    width: 48%;
+}
+
+.luggage-form form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.luggage-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.luggage-list th, .luggage-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.luggage-list th {
+    background-color: #f2f2f2;
+}
+
+.luggage-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.luggage-list tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+/* Login and Register form styles */
+.ticket-counter-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.ticket-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+
+/* Hero section */
+.hero {
+    background-image: url('../assets/images/airport-hero.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.hero-content p {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Features section */
+.features {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    text-align: center;
+    width: 200px;
+    margin: 20px;
+}
+
+.feature-item i {
+    font-size: 3em;
+    color: #007bff;
+}
+
+/* Flight info section */
+.flight-info {
+    padding: 50px 0;
+}
+
+.flight-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.flight-info th, .flight-info td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.flight-info th {
+    background-color: #f2f2f2;
+}
+
+/* News section */
+.news-updates {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.news-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.news-item {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Partners section */
+.partners {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.partner-logos a {
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.partner-logos a:hover {
+    transform: scale(1.1);
+}
+
+.partner-logos img {
+    height: 50px;
+    width: auto;
+}
+
+
+.newsletter h2 {
+    margin-bottom: 20px;
+}
+
+/* newsleeter section */
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.newsletter input[type="email"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: #0056b3;
+}
+
+#newsletter-message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/* dashboard styles */
+.dashboard-container,
+.management-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.dashboard-item {
+    display: block;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.dashboard-item:hover {
+    background-color: #0056b3;
+}
+
+.management-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+
+/* edit  buttons styles*/
+button[onclick*="edit"],
+form[action*="edit"] button,
+.btn-edit {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button[onclick*="edit"]:hover,
+form[action*="edit"] button:hover,
+.btn-edit:hover {
+    background-color: #218838;
+}
+
+/* delete button styles */
+button[onclick*="delete"],
+form[action*="delete"] button,
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button[onclick*="delete"]:hover,
+form[action*="delete"] button:hover,
+.btn-danger:hover {
+    background-color: #c82333;
+}
